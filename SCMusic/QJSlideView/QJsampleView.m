@@ -29,16 +29,7 @@
 
 @implementation QJsampleView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-
-
+// 初始化
 -(instancetype)initWithFrame:(CGRect)frame Title:(NSString *)title
 {
     self = [super initWithFrame:frame];
@@ -73,182 +64,6 @@
     return _mytableView;
 }
 
-#pragma - mark 导入数据
-- (void)loadNewSongs
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=1&offset=0&size=100";//前100热门歌曲
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"song_list"];
-            songInfo.OMSongs = [OMHotSongInfo mj_objectArrayWithKeyValuesArray:array];
-            //            [self reloadTableView:_radioAndMusicTableView];
-            [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-
-- (void)loadHotSongs
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=2&offset=0&size=100";//前100热门歌曲
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"song_list"];
-            songInfo.OMSongs = [OMHotSongInfo mj_objectArrayWithKeyValuesArray:array];
-            //            [self reloadTableView:_radioAndMusicTableView];
-            [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-
-- (void)loadHotArtists
-{
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.artist.get72HotArtist&format=json&order=1&offset=0&limit=100";//前100热门歌手
-//    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        if ([responseObject isKindOfClass:[NSDictionary class]])
-//        {
-//            NSArray *array = [responseObject objectForKey:@"artist"];
-//            hotArtistsArray = [OMArtistInfo objectArrayWithKeyValuesArray:array];
-//           [_mytableView reloadData];
-//        }
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"error--%@",error);
-//    }];
-}
-
-- (void)loadClassicOldSongs
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=22&offset=0&size=100";//前100热门歌曲
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"song_list"];
-            songInfo.OMSongs = [OMHotSongInfo mj_objectArrayWithKeyValuesArray:array];
-            //            [self reloadTableView:_radioAndMusicTableView];
-            [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-
-- (void)loadLoveSongs
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=25&offset=0&size=100";//前100热门歌曲
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"song_list"];
-            songInfo.OMSongs = [OMHotSongInfo mj_objectArrayWithKeyValuesArray:array];
-            //            [self reloadTableView:_radioAndMusicTableView];
-            [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-
-- (void)loadMovieSongs
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=24&offset=0&size=100";//前100热门歌曲
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"song_list"];
-            songInfo.OMSongs = [OMHotSongInfo mj_objectArrayWithKeyValuesArray:array];
-            //            [self reloadTableView:_radioAndMusicTableView];
-            [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-
-- (void)loadEuropeAndTheUnitedStatesSongs
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=21&offset=0&size=100";//前100热门歌曲
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"song_list"];
-            songInfo.OMSongs = [OMHotSongInfo mj_objectArrayWithKeyValuesArray:array];
-            //            [self reloadTableView:_radioAndMusicTableView];
-            [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-
-
-
-- (void)loadNewAlbums
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = @"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.plaza.getRecommendAlbum&format=json&offset=0&limit=100";//前100新专辑
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject valueForKeyPath:@"plaze_album_list.RM.album_list.list"];//多级
-            newAlbumsArray = [OMAlbumInfo objectArrayWithKeyValuesArray:array];
-           [_mytableView reloadData];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error--%@",error);
-    }];
-}
-- (void)loadArtistSong
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = [NSString stringWithFormat:@"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.artist.getSongList&format=json&order=2&tinguid=%@&offset=0&limits=50", choosedArtistUID];
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"songlist"];
-            songInfo.OMSongs = [OMHotSongInfo objectArrayWithKeyValuesArray:array];
-            [_mytableView reloadData];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-- (void)loadAlbumSong
-{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *path = [NSString stringWithFormat:@"http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.album.getAlbumInfo&format=json&album_id=%@",choosedAlbumID];
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject isKindOfClass:[NSDictionary class]])
-        {
-            NSArray *array = [responseObject objectForKey:@"songlist"];
-            songInfo.OMSongs = [OMHotSongInfo objectArrayWithKeyValuesArray:array];
-            [_mytableView reloadData];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
-
-
 #pragma - mark TableView代理
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -282,11 +97,12 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"myCell"];
     }
-    
+
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
     }
@@ -295,6 +111,7 @@
 
     return cell;
 }
+
 
 -(void)setSongListInfo: (UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -359,19 +176,19 @@
 - (void)reloadData
 {
     if ([self.title  isEqual: @"新歌榜"]) {
-        [self loadNewSongs];
+        [songInfo loadNewSongs:_mytableView];
     } else if ([self.title  isEqual: @"热歌榜"]) {
-        [self loadHotSongs];
+        [songInfo loadHotSongs:_mytableView];
     } else if ([self.title  isEqual: @"热门歌手"]) {
-        [self loadHotArtists];
+        [songInfo loadHotArtists:_mytableView];
     }else if ([self.title  isEqual: @"经典老歌榜"]) {
-        [self loadClassicOldSongs];
+        [songInfo loadClassicOldSongs:_mytableView];
     }else if ([self.title  isEqual: @"网路歌曲榜"]) {
-        [self loadLoveSongs];
+        [songInfo loadLoveSongs:_mytableView];
     }else if ([self.title  isEqual: @"影视金曲榜"]) {
-        [self loadMovieSongs];
+        [songInfo loadMovieSongs:_mytableView];
     }else if ([self.title  isEqual: @"欧美金曲榜"]) {
-        [self loadEuropeAndTheUnitedStatesSongs];
+        [songInfo loadEuropeAndTheUnitedStatesSongs:_mytableView];
     }
 //    [self.mytableView reloadData];
 }

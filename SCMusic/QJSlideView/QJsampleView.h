@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
-#import "MJExtension.h"
 #import "OMHotSongInfo.h"
 #import "OMSongInfo.h"
 #import "OMAlbumInfo.h"
 #import "OMArtistInfo.h"
+
 
 @interface QJsampleView : UIView
 

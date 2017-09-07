@@ -14,31 +14,14 @@
 #import "QJBigScrollView.h"
 
 
-
-@interface ViewController ()
-{
- 
-}
-
-@end
-
 @implementation ViewController
-
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    musicPlayer = MusicPlayerManager.sharedInstance;
-//    onlineMusicArray = [NSArray arrayWithObjects:@"热歌榜",@"热门歌手",@"新碟上架",nil];
-//    
-//    _songTableView.delegate = self;
-//    _songTableView.dataSource = self;
-//    
-//    [self loadHotSongs];
     
-    self.title = @"SC音乐";
     [self confingSlideButtonView];
 
 }
@@ -49,8 +32,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 初始化界面配置
 - (void)confingSlideButtonView
 {
+    // 设置导航栏title
+    self.title = @"SC音乐";
+    
+    // 设置SlideButtonView的title
     NSArray *titleArr = @[@"新歌榜",@"热歌榜",@"经典老歌榜",@"网路歌曲榜",@"影视金曲榜",@"欧美金曲榜"];
     
     QJSlideButtonView *s = [[QJSlideButtonView alloc] initWithcontroller:self TitleArr:titleArr];

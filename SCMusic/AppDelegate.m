@@ -27,10 +27,14 @@
     self.window.rootViewController = [[NavigationViewController alloc] initWithRootViewController:[[ViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
-    //后台播放音频设置,需要在Capabilities->Background Modes中勾选Audio,Airplay,and Picture in Picture
+    // 后台播放音频设置,需要在Capabilities->Background Modes中勾选Audio,Airplay,and Picture in Picture
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setActive:YES error:nil];
     [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    // 设置接受远程控制
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     
     return YES;
 }

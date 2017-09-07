@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
+#import "MJExtension.h"
 #import "OMHotSongInfo.h"
 
 @interface OMSongInfo : NSObject
@@ -31,6 +32,14 @@
 @property (nonatomic,assign) long playSongIndex;
 @property (nonatomic,strong) NSArray *OMSongs;
 
+
+- (void)loadNewSongs: (UITableView *)songListTableView;
+- (void)loadHotSongs: (UITableView *)songListTableView;
+- (void)loadHotArtists: (UITableView *)songListTableView;
+- (void)loadClassicOldSongs: (UITableView *)songListTableView;
+- (void)loadLoveSongs: (UITableView *)songListTableView;
+- (void)loadMovieSongs: (UITableView *)songListTableView;
+- (void)loadEuropeAndTheUnitedStatesSongs: (UITableView *)songListTableView;
 
 -(void)getSelectedSong: (NSString *)songID index: (long)index;
 -(void) setSongInfo: (OMHotSongInfo *)info;

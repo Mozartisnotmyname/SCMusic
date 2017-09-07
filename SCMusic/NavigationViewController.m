@@ -19,7 +19,7 @@ OMSongInfo *songInfo;
 
 @implementation NavigationViewController
 
-#pragma - mark viewDidLoad
+#pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -119,7 +119,7 @@ OMSongInfo *songInfo;
                                                object: nil];
 }
 
-#pragma - mark 锁屏界面开启和监控远程控制事件
+#pragma mark - 锁屏界面开启和监控远程控制事件
 //锁屏界面开启和监控远程控制事件
 - (void)createRemoteCommandCenter{
  
@@ -221,7 +221,7 @@ OMSongInfo *songInfo;
     
 }
 
-#pragma - mark removeObserver
+#pragma mark - removeObserver
 - (void)dealloc{
     [self removeObserver];
 }
@@ -244,7 +244,7 @@ OMSongInfo *songInfo;
 }
 
 
-#pragma - mark KVO
+#pragma mark - KVO
 -(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     
     if ([keyPath  isEqual: @"playSongIndex"]) {
@@ -259,7 +259,7 @@ OMSongInfo *songInfo;
     
 }
 
-#pragma - mark 播放音乐调用
+#pragma mark - 播放音乐调用
 -(void) playSongSetting {
 
     if (_playerTimeObserver != nil) {
@@ -418,7 +418,7 @@ OMSongInfo *songInfo;
 
 }
 
-#pragma - mark 锁屏播放设置
+#pragma mark - 锁屏播放设置
 //展示锁屏歌曲信息：图片、歌词、进度、演唱者
 - (void)showLockScreenTotaltime:(float)totalTime andCurrentTime:(float)currentTime andLyricsPoster:(BOOL)isShow{
     
@@ -469,7 +469,7 @@ OMSongInfo *songInfo;
     
 }
 
-#pragma - mark 播放或暂停
+#pragma mark - 播放或暂停
 -(void)playAndPauseButtonAction: (UIButton *)sender {
     
     NSLog(@"当前播放曲目：%@", songInfo.title);
@@ -490,7 +490,7 @@ OMSongInfo *songInfo;
     }
 }
 
-#pragma - mark 下一曲
+#pragma mark - 下一曲
 -(void) nextButtonAction: (UIButton *)sender {
     
     if (songInfo.playSongIndex < songInfo.OMSongs.count) {
@@ -504,7 +504,7 @@ OMSongInfo *songInfo;
 
 }
 
-#pragma - mark 歌曲播放结束操作
+#pragma mark - 歌曲播放结束操作
 -(void) finishedPlaying {
 
     NSLog(@"本歌曲播放结束，准备播放下一首歌曲！");
@@ -512,7 +512,7 @@ OMSongInfo *songInfo;
     [self nextButtonAction:nil];
 }
 
-#pragma - mark 进度条改变值时触发
+#pragma mark - 进度条改变值时触发
 //拖动进度条改变值时触发
 -(void) playbackSliderValueChanged {
     
@@ -530,7 +530,7 @@ OMSongInfo *songInfo;
     }
 }
 
-#pragma - mark 进度条改变值结束时触发
+#pragma mark - 进度条改变值结束时触发
 -(void) playbackSliderValueChangedFinish {
     // 更新播放时间
     [self updateTime];
@@ -546,7 +546,7 @@ OMSongInfo *songInfo;
     }
 }
 
-#pragma - mark 更新播放时间
+#pragma mark - 更新播放时间
 -(void) updateTime {
     
     CMTime duration = musicPlayer.play.currentItem.asset.duration;
@@ -570,7 +570,7 @@ OMSongInfo *songInfo;
     
 }
 
-#pragma - mark 主页控制View点击事件
+#pragma mark - 主页控制View点击事件
 -(void)tapAction:(id)tap
 {
     NSLog(@"点击了tapView");
@@ -608,7 +608,6 @@ OMSongInfo *songInfo;
     // 底部弹出的View
     [appWindow addSubview:_deliverView];
     [_deliverView playSetting];
-//    [currentPlaySongImage stopRotating];
     
     // 向下滑动退出
     UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(responseGlide)];
@@ -626,7 +625,7 @@ OMSongInfo *songInfo;
 
 }
 
-#pragma - mark 下滑退出detail控制界面
+#pragma mark - 下滑退出detail控制界面
 - (void)responseGlide {
     
     NSLog(@"====");

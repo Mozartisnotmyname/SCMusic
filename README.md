@@ -17,5 +17,10 @@ SC Music Player is a music player which get the data from the baidu music. SC Mu
 
 
 
-##2017-12-09更新：
+## 2017-12-09更新：
 之前的项目升级到iOS11出现了一些问题，在适配iOS11的同时重写了UI，修复了歌词滚动的bug，歌曲类型增加了Bill、摇滚、爵士、流行、情歌，对于歌曲加载采用了懒加载、上拉刷新和下拉加载更多。tableView的数据过多采用懒加载和滑动结束才加载能显著提升性能。
+
+App截图：
+
+
+![](SCMusic/SCMusic截图.gif)  

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2017 chenling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ7-ju-4r8">
+                                <rect key="frame" x="0.0" y="639" width="375" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="FlA-HB-Li8"/>
+                                    <constraint firstAttribute="width" constant="375" id="jOz-T9-PGX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCMusic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sI9-Na-vNd">
+                                <rect key="frame" x="72" y="310" width="231" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="EUk-ag-3uI"/>
+                                    <constraint firstAttribute="width" constant="231" id="VIK-sX-JGy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sI9-Na-vNd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="290" id="0Jo-Vx-5ok"/>
+                            <constraint firstItem="sI9-Na-vNd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="56" id="0SO-7x-N5l"/>
+                            <constraint firstItem="sI9-Na-vNd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5ni-lp-bzz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sI9-Na-vNd" secondAttribute="trailing" constant="56" id="D98-UQ-mel"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="kZ7-ju-4r8" secondAttribute="bottom" id="cFj-Dp-N82"/>
+                            <constraint firstItem="kZ7-ju-4r8" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="hdt-Kz-5CR"/>
+                            <constraint firstAttribute="trailing" secondItem="kZ7-ju-4r8" secondAttribute="trailing" id="oUz-Xv-Z07"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+</document>
